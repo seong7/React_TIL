@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import logo from "./logo.svg";
+// import "./App.css";
+import Conditional from "./1.JSX/Conditional";
+import Undefined from "./1.JSX/Undefined";
+import InlineStyle from "./1.JSX/InlineStyle";
+import ClassName from "./1.JSX/ClassName";
+import MyComponent_fn from "./2.Component/MyComponent_fn";
+import Props_fn from "./2.Component/Props_fn";
+import Props_cl from "./2.Component/Props_cl";
+import State_cl from './2.Component/State_cl';
+import UseState_fn from './2.Component/UseState_fn';
+import EventBasic_cl from './3.Event/EventBasic_cl';
+import HandlerBinding_cl from './3.Event/HandlerBinding_cl';
+import HandlerArrow_cl from './3.Event/HandlerArrow_cl';
+import HandlerArrow_fn from './3.Event/HandlerArrow_fn';
+import HandlerForm_fn from './3.Event/HandlerForm_fn';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/* <Conditional /> */}
+        {/* <Undefined/> */}
+        {/* <InlineStyle/> */}
+        {/* <ClassName/> */}
+        {/* <MyComponent_fn/> */}
+        {/* <Props_fn test={"3"} favoriteNumber={3}>props.children 부분</Props_fn> */}
+        {/* <Props_cl favoriteNumber={5}>props.children 부분</Props_cl> */}
+        {/* <State_cl/> */}
+        {/* <UseState_fn/> */}
+        {/* <EventBasic_cl/> */}
+        {/* <HandlerBinding_cl/> */}
+        {/* <HandlerArrow_cl /> */}
+        {/* <HandlerArrow_fn/> */}
+        <HandlerForm_fn/>
     </div>
   );
 }
