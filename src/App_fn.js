@@ -16,6 +16,7 @@ import HandlerArrow_cl from './4.Event/HandlerArrow_cl';
 import HandlerArrow_fn from './4.Event/HandlerArrow_fn';
 import HandlerForm_fn from './4.Event/HandlerForm_fn';
 import ValidationSample from './5.Ref_DOM/ValidationSample';
+import IterationSample from './6.Iteration/IterationSample';
 
 
 
@@ -37,6 +38,7 @@ function App_fn() {
         {/* <HandlerArrow_fn/> */}
         {/* <HandlerForm_fn/> */}
         {/* <ValidationSample/> */}
+        <IterationSample/>
     </div>
   );
 }
