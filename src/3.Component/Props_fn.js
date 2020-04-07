@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'; 
 
 if(false){
-
+    // 방법 1 ) props 객체 변수를 매개변수로 입력
     const Props_fn = (props) => {
         if(false){
             // props 기본 사용 법
@@ -27,8 +27,10 @@ if(false){
     };
 }
 
-// if(false){
-
+// if(false){ // 선언문 자체를 if 블럭으로 가두면 블럭 밖에서 호출 불가 
+              // function declaration 으로 바꿔도 마찬가지인데... 왜..?
+    
+    // 방법 2) props 객체의 내부 property 들을 객체 형식의 매개변수로 입력
     const Props_fn = ({test, children, favoriteNumber}) => {
         return (
             <div>

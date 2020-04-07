@@ -5,7 +5,8 @@ const HandlerForm_fn = () => {
         username: "",
         text: ""
     })
-    const { username, text } = form;    // 변수 선언( 편의 상 키명과 동일하게 해줌 )
+    const { username: name, text } = form;    // 변수 선언 (객체의 비구조화는 객체 형태로 함)
+        // 비구조화에서 변수를 rename 하여 사용하는 법
 
     const onChange = e => {
         const nextForm = {
@@ -15,7 +16,7 @@ const HandlerForm_fn = () => {
         setForm(nextForm);  // 새로운 nextForm 을 set 에 넣어줌
     }
     const onClick = () => {
-        alert(username + ": " + text);
+        alert(name + ": " + text);
         // setUsername("");
         // setText("");
         setForm({
@@ -36,7 +37,7 @@ const HandlerForm_fn = () => {
                 type="text"
                 name="username"
                 placeholder = "사용자명"
-                value={username}
+                value={name}
                 onChange={onChange}
             />
             <input

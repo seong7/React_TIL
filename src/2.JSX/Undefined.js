@@ -6,6 +6,7 @@ function Undefined () {
             Error: Undefined(...): Nothing was returned from render.
         */}
         const name = undefined;
+        // let name; // 위와 동일함
         return name;
     }
     if(false){
