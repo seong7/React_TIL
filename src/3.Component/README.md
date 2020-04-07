@@ -10,11 +10,11 @@
 
  ## 1. props 객체 사용법
  #### - 함수형 Component
-   1. props **객체의 변수**를 Component 함수의 **매개변수**로 입력 [>>]()
-   2. props 객체의 **내부 property 들**을 **객체 형식의 매개변수**로 Component 함수에 입력 (비구조화 할당) [>>]()
+   1. props **객체의 변수**를 Component 함수의 **매개변수**로 입력 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/Props_fn.js#L5)
+   2. props 객체의 **내부 property 들**을 **객체 형식의 매개변수**로 Component 함수에 입력 (비구조화 할당) [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/Props_fn.js#L18)
 
   #### 2. Class 형 Component
-   1. **내장된 객체** this.props 를 **비구조화 할당** 형식으로 **render() 함수 내에** 선언하여 사용 [>>]()
+   1. **내장된 객체** this.props 를 **비구조화 할당** 형식으로 **render() 함수 내에** 선언하여 사용 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/Props_cl.js#L15)
 <br/><br/>
 
  ## 2. propTypes 및 defaultProps 사용법
@@ -51,7 +51,7 @@
 ## 1. 클래스 형 Comoponent 
  #### 1. State 선언
   - **선언 방법 1** : constructor method(생성자 함수) 사용
-  - **선언 방법 2** : constructor method 사용 안해도 됨 [>>]()
+  - **선언 방법 2** : constructor method 사용 안해도 됨 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/State_cl.js#L3)
 
  #### 2. State 조회 (__render() 함수 내에서)
   - **this.state** 사용
@@ -59,19 +59,19 @@
  #### 3. State 의 값 조작 (__render() 함수 내에서)
   - **this.setState** 사용
     - this.setState 는 **비동기적으로 실행**되는 **함수**임   
-      **: 매개변수**에따라 **조작의 정확성**이 **크게 영향**을 받음 **(꼭 숙지할 것 !) [>>]()**
+      **: 매개변수**에따라 **조작의 정확성**이 **크게 영향**을 받음 **(꼭 숙지할 것 !) [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/State_cl.js#L38)**
 
 ## 2. 함수 형 Comoponent 
   - State 객체는 원래 없지만,   
     **State 객체의 역할**을 하는 **{ useState } 를 import** 하여 사용 가능
   
   #### 1. useState 선언
-  - **배열 형태**의 **비구조화 할당** 방식 사용 [>>]()
+  - **배열 형태**의 **비구조화 할당** 방식 사용 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/UseState_fn.js#L4)
 
   - **첫번째 변수 : state 의 property 명 (변수명은 임의)**   
   - **두번째 변수 : 해당 property 에 대한 setter 함수 (변수명은 set + state 변수명 으로 지음)**
   - **useState("")** 의 **매개변수**는 해당 **state property 의 초기 값** (**초기화** 해줌)
 
-  #### 2. useState 의 setter 함수로 새로운 property 값 넣어줌 [>>]()
+  #### 2. useState 의 setter 함수로 새로운 property 값 넣어줌 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/UseState_fn.js#L15)
 
   #### *** useState 로 다수의 property 가진 state 관리하는 법 [>>](./4.Event/HandlerForm_fn.js) 
