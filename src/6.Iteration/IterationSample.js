@@ -37,12 +37,13 @@ const IterationSample = () => {
         setNextId(nextId + 1);
         setInputText("");
     }
-    const onRemove = (id) => {
+    const onRemove = (id) => {  // 요소 삭제하는 함수
         // console.log(id);
         const nextNames = names.filter((c) => c.id !== id); // 불변성 유지 
         setNames(nextNames);                                // 기존 배열 유지한채로 새로운 배열 생성해서 넣어줌
     }
     
+    /* map() 으로 li 형성 */
     const nameList = names.map(name => <li key={name.id} onDoubleClick={()=>{onRemove(name.id)}}>{name.text}</li>);
                                         // key 값 으로 id 값 부여
     return (
