@@ -1,3 +1,5 @@
+  # 4. Event
+  
 ### React Event 종류
   - 참고 : 
   (https://facebook.github.io/react/docs/events.html)
@@ -18,7 +20,6 @@
         - Transition
 
 
-  # Event
 
   ### 1. 익명함수 Event Handler (class) [>>](./EventBasic_cl.js)
   ### 2. Event Handler binding (class) [>>](./HandlerBinding_cl.js)

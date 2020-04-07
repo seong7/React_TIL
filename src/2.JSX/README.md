@@ -1,4 +1,4 @@
-# JSX 문법
+# 2. JSX 문법
 
 ## 조건식 사용법 [>>](./Conditional.js)
   - Turnary (삼항조건식)

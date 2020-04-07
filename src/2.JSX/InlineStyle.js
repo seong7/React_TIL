@@ -7,9 +7,9 @@ function InlineStyle(){
         color: "aqua",
         fontSize: "48px",
         fontWeight: "bold",
-        padding: "16",
+        padding: "16px",
     };
-    {/* 단위 생략하면 px 대입됨 */}
+    {/* 단위 반드시 신경써서 입력하기 */}
     
     return <div style={style}>{name}</div>;
 }

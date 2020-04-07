@@ -15,8 +15,11 @@ import HandlerBinding_cl from './4.Event/HandlerBinding_cl';
 import HandlerArrow_cl from './4.Event/HandlerArrow_cl';
 import HandlerArrow_fn from './4.Event/HandlerArrow_fn';
 import HandlerForm_fn from './4.Event/HandlerForm_fn';
+import ValidationSample from './5.Ref_DOM/ValidationSample';
 
-function App() {
+
+
+function App_fn() {
   return (
     <div className="App">
         {/* <Conditional /> */}
@@ -32,9 +35,10 @@ function App() {
         {/* <HandlerBinding_cl/> */}
         {/* <HandlerArrow_cl /> */}
         {/* <HandlerArrow_fn/> */}
-        <HandlerForm_fn/>
+        {/* <HandlerForm_fn/> */}
+        {/* <ValidationSample/> */}
     </div>
   );
 }
 
-export default App;
+export default App_fn;

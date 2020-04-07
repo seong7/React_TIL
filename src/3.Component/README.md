@@ -1,4 +1,4 @@
-# Component 에 대해 (props , state)
+# 3. Component (props , state)
 
 - React Snippet 사용
     > **rcc** (React component class): 클래스형 컴포넌트 생성 문구   
