@@ -12,6 +12,8 @@
 
  ![lifeCycle img](./ref/lifecycle.JPG)
 
+ ![lifeCycleMethod img](./ref/lifeCycleMethod.JPG)
+
  ### 1. Mount
   - **DOM이 생성되고 브라우저에 나타나는 것** 을 말함
 
@@ -34,7 +36,8 @@
   - **update 시 호출되는 method**
     - getDerivedStateFromProps: 이 메서드는 마운트 과정에서도 호출되며, 업데이트가 시작하기 전에도 호출됩니다. props의 변화에 따라 state 값에도 변화를 주고 싶을 때 사용합니다.
 
-    - shouldComponentUpdate: 컴포넌트가 리렌더링을 해야 할지 말아야 할지를 결정하는 메서드입니다. 이 메서드에서는 true 혹은 false 값을 반환해야 하며, true를 반환하면 다음 라이프사이클 메서드를 계속 실행하고, false를 반환하면 작업을 중지합니다. 즉, 컴포넌트가 리렌더링되지 않습니다. 만약 특정 함수에서 this.forceUpdate() 함수를 호출한다면 이 과정을 생략하고 바로 render 함수를 호출합니다.
+    - shouldComponentUpdate: 컴포넌트가 리렌더링을 해야 할지 말아야 할지를 결정하는 메서드입니다. 이 메서드에서는 true 혹은 false 값을 반환해야 하며, true를 반환하면 다음 라이프사이클 메서드를 계속 실행하고, false를 반환하면 작업을 중지합니다. 즉, 컴포넌트가 리렌더링되지 않습니다. 만약 특정 함수에서 this.forceUpdate() 함수를 호출한다면 이 과정을 생략하고 바로 render 함수를 호출합니다.   
+      : 컴포넌트 업데이트의 성능 개선에서 중요한 method 임
 
     - render: 컴포넌트를 리렌더링합니다.
 

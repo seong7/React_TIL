@@ -10,10 +10,12 @@
 
  ## 1. props 객체 사용법
  #### - 함수형 Component
+  - Component 함수의 **매개변수로 props** 를 넣어주고 받는다.
    1. props **객체의 변수**를 Component 함수의 **매개변수**로 입력 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/Props_fn.js#L5)
    2. props 객체의 **내부 property 들**을 **객체 형식의 매개변수**로 Component 함수에 입력 (비구조화 할당) [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/Props_fn.js#L18)
 
   #### 2. Class 형 Component
+  - Component 클래스의 인스턴스(객체)에 **자동으로 props 라는 property** 가 들어오므로 **this.props** 로 사용
    1. **내장된 객체** this.props 를 **비구조화 할당** 형식으로 **render() 함수 내에** 선언하여 사용 [>>](https://github.com/seong7/React_study/blob/master/src/3.Component/Props_cl.js#L15)
 <br/><br/>
 

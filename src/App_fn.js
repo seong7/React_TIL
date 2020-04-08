@@ -19,7 +19,6 @@ import ValidationSample from './5.Ref_DOM/ValidationSample';
 import IterationSample from './6.Iteration/IterationSample';
 
 
-
 function App_fn() {
   return (
     <div className="App">
@@ -38,9 +37,11 @@ function App_fn() {
         {/* <HandlerArrow_fn/> */}
         {/* <HandlerForm_fn/> */}
         {/* <ValidationSample/> */}
-        <IterationSample/>
+        {/* <IterationSample/> */}
+
     </div>
   );
 }
+
 
 export default App_fn;
