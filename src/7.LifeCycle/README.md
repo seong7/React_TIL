@@ -49,3 +49,9 @@
    - 마운트의 반대 과정, 즉 컴포넌트를 DOM에서 제거하는 것이 언마운트(unmount)
   - **unmount 시 호출되는 method**
     - componentWillUnmount: 컴포넌트가 웹 브라우저상에서 사라지기 전에 호출하는 메서드
+
+
+ ### 4. ErrorBoundary
+ - **try catch 구문**처럼 부모 component 에서 자식 component 호출 부분을 **ErrorBoundary 로 감싸**주면 Error 발생 시 **ErrorBoundary Component 가 render** 된다.
+   - **ErrorBoundary Component** 선언 [[ErrorBoundary.js >>](./ErrorBoundary.js)]
+   - **부모 Component 에서 호출** 방법 [[App_cl.js line 39 >>](./App_cl.js)]
