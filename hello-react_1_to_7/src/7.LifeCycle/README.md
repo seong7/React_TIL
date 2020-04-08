@@ -12,7 +12,7 @@
 
  ![lifeCycle img](./ref/lifecycle.JPG)
 
- ![lifeCycleMethod img](./ref/lifeCycleMethod.JPG)
+ ![lifeCycleMethod img](./ref/lifecycleMethod.JPG)
 
  ### 1. Mount
   - **DOM이 생성되고 브라우저에 나타나는 것** 을 말함
