@@ -1,0 +1,6 @@
+:local .wrapper_test {
+    background: black;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+}

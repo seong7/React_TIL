@@ -7,18 +7,29 @@
 // $blue: #339af0;
 // $indigo: #5c7cfa;
 // $violet: #7950f2;
-
-// // 믹스인 만들기(재사용되는 스타일 블록을 함수처럼 사용할 수 있음)
 // @mixin square($size){
 //     $calculated: 32px * $size;
 //     width: $calculated;
 //     height: $calculated;
 // }
 
+// 원래는 아래처럼 imoprt 해서 사용하지만, webpack.config.js 파일에 설정으로
+// 모든 파일에 utill.scss 자동 imoprt 되도록 해뒀음.
 // @import "../styles/utils.scss";
+
+
+/* Sass 라이브러리 사용*/
+@import '~include-media/dist/include-media';   
+@import '~open-color/open-color'; 
 
 .SassComponent {
     display: flex;
+    background : $oc-gray-2;
+    @include media('<768px'){
+      background : $oc-gray-9;
+    }
+
+
     .box{
         background: red;
         cursor: pointer;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './SassComponent.scss';    // scss loader
+import './SassComponent.scss';    // scss loader 사용함
  
 const SassComponent = () => {
   return (

@@ -1,0 +1,22 @@
+/* 고유값이 자동으로 생성되므로, 
+  이 파일에는 흔히 사용되는 단어들로 막 naming해도 됨*/
+
+
+  .wrapper {
+    background: black;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+  }
+
+  .inverted {
+    color: black;
+    background: white;
+    border: 1px solid black;
+  }
+   
+  /* 글로벌 클래스의 CSS를 작성 방법 : */
+  :global .something {
+    font-weight: 800;
+    color: aqua;
+  }
