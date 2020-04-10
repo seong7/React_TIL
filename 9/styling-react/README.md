@@ -29,8 +29,8 @@
           font: 100% $font-stack;
           color: $primary-color;
         }
-        
-  ### 1. sass-loader 설정하기
+  ### 1. node-sass 패키지 설치하기      
+  ### 2. sass-loader 설정하기
   - **설정을 통해 Sass 파일을 .css 파일로 컴파일 하지 않고 바로 앱에 주입할 수 있게 할 수 있음**
   - react app 은 **webpack 세부 설정 파일들**이 모두 **숨겨져** 있음
   - **설정 파일들 꺼내는 방법 :**   
@@ -81,7 +81,7 @@
   4. **완료 !!**   
       comopnent 파일의 상단에 **import ".scss 파일 경로";** 로 사용해보기 **[[>> (SassComponent.js 2번째 줄)]()]**
 
-  ### 2. scss 파일의 import
+  ### 3. scss 파일의 import
    - Sass 는 **[./src/styles/utils.scss](./src/styles/utils.scss)** 파일처럼 **공용 파일**을 만들어 모든 파일에서 **import** 해서 사용할 수 있다.
      #### 1. Sass 파일 import 하는 방법
      - import 하는 파일의 상단에 아래 명령어 작성
@@ -101,7 +101,7 @@
             }
      - 위 설정 후 **[./src/1.sass/SassComponent.scss](./src/1.sass/SassComponent.scss)** 파일에서 **@import** 문 없이 **[./src/styles/utils.scss](./src/styles/utils.scss)** 파일의 **@mixin** square() 을 **@include** 하여 사용 하고 있음을 확인 가능
 
- ### 3. Sass 외부 라이브러리 사용하기
+ ### 4. Sass 외부 라이브러리 사용하기
   - 라이브러리 두 가지:   
   **include-media** : 반응형 디자인을 쉽게 만들어주는 라이브러리   
   **open-color** : 색상 팔레트 라이브러리 
