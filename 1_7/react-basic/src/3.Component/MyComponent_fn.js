@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyComponent_fn = () => {
     return (
-        <div>
+        <div >
             My new cool Componenet.
         </div>
     );

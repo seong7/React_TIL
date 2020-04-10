@@ -129,6 +129,7 @@
 
 
 # 3. CSS Module
+
  - css 를 불러와서 사용할 때 클래스 이름을 **[파일이름]_[클래스 이름]\_[해시값]** 형태의 **고유값**으로 자동 생성해주는 기술
    - 즉, **클래스 명**을 **흔히 사용하는 단어**로 지어줘도 상관 없음   
      (해당 파일을 사용하는 **컴포넌트 내부에서만** 작동하므로)
@@ -170,3 +171,10 @@
         */
 
 
+# 4. CSS-in-JS 라이브러리
+JS 파일 안에 스타일을 선언할 수 있도록 해주는 라이브러리
+
+관련 라이브러리 List : [https://github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
+
+**가장 선호되는 라이브리러리 : styled-components ([폴더로 이동 >>](./src/3.StyledComponent))**
+- 또는 emoticon 라이브러리 또한 많이 쓰인다. (작동 방식 비슷)

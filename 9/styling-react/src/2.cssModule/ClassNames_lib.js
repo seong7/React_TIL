@@ -30,6 +30,7 @@ if(false){
     // 라이브러리 사용하지 않는 다면 :
     const Classnames_lib = ({ highlighted, theme }) => (
         <div className={`Classnames_lib ${theme} ${highlighted ? 'highlighted' : ''}`}>
+                                                {/* className 을 이용해 조건 부 styling 가능 */}
           Hello
         </div>
       );

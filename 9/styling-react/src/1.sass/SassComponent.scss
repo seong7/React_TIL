@@ -25,7 +25,7 @@
 .SassComponent {
     display: flex;
     background : $oc-gray-2;
-    @include media('<768px'){
+    @include media('<768px'){   // @mixin 을 사용하기위해 @include 사용
       background : $oc-gray-9;
     }
 
