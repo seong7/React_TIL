@@ -1,12 +1,12 @@
-# todo-app 프로젝트 [[repo 로 이동]()]
+# todo-app 프로젝트 [[repo >>](https://github.com/seong7/react-todo-app)]
 
-**react-icons package 사용하기**
+**react-icons package 사용하기** 
+[website >>](https://react-icons.netlify.com/#/)
 
 ```bash
  yarn add react-icons
 ```
 
-[website](https://react-icons.netlify.com/#/)
 
 ### 설정
 
@@ -23,7 +23,7 @@
 }
 ```
 
-**.jsconfig.json**
+**.jsconfig.json**   
 컴포넌트 이름 입력 + ctrl + space 하면 컴포넌트 자동으로 불러도록 설정
 
 ```json
