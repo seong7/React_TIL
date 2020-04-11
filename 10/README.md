@@ -8,7 +8,7 @@
 ```
 
 
-### 설정
+### 개발 환경 설정
 
 **.prettierrc**
 
@@ -34,6 +34,5 @@
 }
 ```
 
-### Chrome React Developer Tool 설치하고 사용하기
-
+**Chrome React Developer Tool**   
 React component 의 state 를 console.log() 하지 않고도 실시간으로 볼 수 있다.
