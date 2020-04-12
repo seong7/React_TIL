@@ -16,7 +16,10 @@
 > : **최초** render 때만 useEffect 의 첫번째 매개변수 callback Fn 실행됨
 
    ### 3. useReducer 
-   기본 : [[Counter.js >>](./src/3.useReducer/Counter.js)] / 조금 더 난이도 있는 것 : [[InputReducer.js >>](./src/3.useReducer/InputReducer.js)]
+   기본 : [[Counter.js >>](./src/3.useReducer/Counter.js)]   
+   조금 더 난이도 있는 것 : [[InputReducer.js >>](./src/3.useReducer/InputReducer.js)]   
+   매개변수 3개 사용 : [[todo-app _ App_useReducer.js >>](https://github.com/seong7/react-todo-app/blob/master/src/App_useReducer.js#L38)]
+   
    - **state** 를 더 **동적으로** 다룰 수 있게 해주는 Hook 
    - **Redux** 와 관련 있음 (17장에서 배움)
      > 차이점 : Redux - **type 필수** / useReducer - **type 필드 없어도 됨 (type 자유로움)** 
