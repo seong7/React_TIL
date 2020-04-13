@@ -39,10 +39,20 @@ const onRemove = useCallback(
 setTodos 함수의 매개변수에 기존의 새로운 state 를 바로 넣는 방법 대신  
 state 업데이트를 어떻게 할지 정의해 주는 함수를 넣을 수 있다.
 
+```javascript
+const [number, setNumber] = useState(0);
+// prevNumbers는 현재 number 값을 가리킵니다.
+const onIncrease = useCallback(
+  () => setNumber((prevNumber) => prevNumber + 1),
+  []
+);
+```
+
 아래 코드가 예시이다.
 기존과 달리 setTodos() 의 매개변수에 함수를 넣어주었고, 의존성이 사라져 useCallback() 의 두번째 매개변수인 배열은 비워두었다.
 
-> 의존성이 사라진 부분은 잘 이해가 되질 않는다.
+> 의존성이 사라진 부분은 잘 이해가 되질 않는다.  
+> (아마도 위의 코드처럼, prev 값을 받아 동작하기 때문으로 보임)
 
 ```javascript
 const onRemove = useCallback((id) => {
