@@ -32,65 +32,35 @@
 
 <br/>
 
-## 성능최적화
+## 성능최적화 [>>](./01.optimization)
 
 ### 1. React.memo
 
-함수형 component 의 export 문에 React.memo 를 호출하여 component 의 props 값이 바뀌지 않았을 때는 update 되지 않도록 최적화할 수 있다.
-
-**하지만, performance 체크해보면 크게 차이는 없다. (0.2 ~ 0.8 s 정도 단축됨)**
-
-TodoListItem.js [>> 48번 줄]()
-
-> 클래스형 Component 에서는 shouldComponentUpdate() 함수를 사용해 component 의 update (re-render) 여부를 결정할 수 있다.
-
 ### 2. 함수가 재선언되는 현상 방지 (최적화 효과 높음)
 
-> Event Handler 인 'onToggle', 'onRemove', 'onInsert'
+> 성능 상으로는 두 가지 방법이 비슷함
 
-아래는 onRemove 함수에 useCallback() 을 사용하여, 해당 component 의 state 인 todos 가 변경될 때만 함수를 새로 생성하도록 만든 코드이다.  
-(최적화가 덜 진행됨)
+#### 방법1 : useState 의 setter 함수에 '함수형 매개변수' 사용
 
-```javascript
-const onRemove = useCallback(
-  (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  },
-  [todos]
-);
-```
-
-하지만, todos 가 변경될 때에도 사실 상 함수를 새로 생설할 필요는 없다. (최적화 필요)
+#### 방법2 : useReducer 사용
 
 <br/>
 
-#### 방법1 : useState 의 setter 함수에 '함수형 매개변수' 사용 [>> App_useState.js]()
+## 불변성 (Immutability) 의 중요성
 
-setTodos 함수의 매개변수에 기존의 새로운 state 를 바로 넣는 방법 대신  
-state 업데이트를 어떻게 할지 정의해 주는 함수를 넣을 수 있다.
+불변성이 지켜지지 않으면 객체 내부의 값이 바뀌어도 감지하지 못한다.  
+즉, React.memo 에서 **비교-최적화가 불가능해짐**
 
-아래 코드가 예시이다.
-기존과 달리 setTodos() 의 매개변수에 함수를 넣어주었고, 의존성이 사라져 useCallback() 의 두번째 매개변수인 배열은 비워두었다.
+> 불변성 유지 방법 **[>>](./02.immutability/immutability.js)**
 
-> 의존성이 사라진 부분은 잘 이해가 되질 않는다.
+**Spread operater (전개 연산자 (...) )**  
+전개 연산자 사용시 얕은 복사 (shallow copy) 가 이뤄짐,  
+즉, 내부의 값이 모두 복사되는 것이 아니라, 가장 바깥쪽의 값만 복사된다.
 
-```javascript
-const onRemove = useCallback((id) => {
-  setTodos((todos) => todos.filter((todo) => todo.id !== id));
-}, []);
-```
-
-**소요된 시간이 1s 이하로 상당히 많이 줄어든 것 확인 가능 !  
-(아래 사진 참조)**
-
-![performance_check_img](./ref/performance_check.JPG)
+> 배열 내 객체 / 객체 내 객체의 불변성 유지 방법 **[>>](./02.immutability/ShallowCopy.js)**
 
 <br/>
 
-#### 방법2 : useReducer 사용 [>> App_useReducer.js]()
+## react-virtualized 를 사용한 Rendering 최적화 [>>](03.react-virtualized)
 
-가장 가독성이 높아 보인다.
-
-**성능 상으로는 두 가지 방법이 비슷함**
-
-### react-virtualized 를 사용한 redering 최적화
+컴포넌트들의 크기만 화면상에 유지시키고 스크롤이 되었을 때만 rendering 하게끔 제어할 수 있는 React 라이브러리
