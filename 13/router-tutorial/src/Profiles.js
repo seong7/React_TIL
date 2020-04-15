@@ -1,17 +1,30 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Link, Route } from "react-router-dom";
 import Profile from "./Profile";
 
 const Profiles = () => {
+  const activeStyle = {
+    background: "black",
+    color: "white",
+  };
   return (
     <div>
       <h3>사용자 목록:</h3>
       <ul>
         <li>
-          <Link to="/profiles/velopert">Velopert</Link>
+          {/* <Link to="/profiles/velopert">Velopert</Link> */}
+          <NavLink
+            activeStyle={activeStyle}
+            to="/profiles/velopert" // to 의 경로와 현재 브라우저의 url 이 일치하면 activeStyle 이 적용됨
+          >
+            velopert
+          </NavLink>
         </li>
         <li>
-          <Link to="/profiles/jason">Jason</Link>
+          {/* <Link to="/profiles/jason">Jason</Link> */}
+          <NavLink activeStyle={activeStyle} to="/profiles/jason">
+            jason
+          </NavLink>
         </li>
       </ul>
 

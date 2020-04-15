@@ -63,10 +63,12 @@ BrowserRouter 컴포넌트는 웹 앱에 HTML5의 History API를 사용하여 �
 
 Route 컴포넌트를 사용하면 어떤 경로에 어떤 컴포넌트를 보여 줄지 정의할 수 있다.
 
-- prop 의 exact 는 중요하므로 꼭 사용할 것.
-- path 에 배열을 넣어주면 두가지 경로 모두 하나의 Route 로 설정 가능하다. [[App.js 28줄 >>]()]
-- component 대신 render 를 넣어줄 수도 있다. [[Profile.js 46줄 >>]()
-- Route 의 component 는 location 과 match 객체를 자동 prop 으로 전달 받는다.
+**Route 컴포넌트의 props 설정**
+
+- exact 는 중요하므로 필요한 Route 컴포넌트에 꼭 사용할 것.
+- path 에 배열을 넣어주면 두가지 경로 모두 하나의 Route 로 설정 가능하다. [[App.js L28 >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/App.js#L37)]
+- component 대신 render 를 넣어줄 수도 있다. [[Profiles.js L31 >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/Profiles.js#L31)]
+- Route 의 component 는 props 로 location 과 match 객체를 자동으로 전달 받는다.
 
 #### 3. Link 사용 [[App.js >>](./src/App.js)]
 
@@ -92,7 +94,7 @@ Link 컴포넌트를 사용하면 앱의 state를 유지한 상태로 HTML5 Hist
 
 **URL Parameter 값을 컴포넌트에서 사용하는 법**
 
-Route 의 component 는 **"match"** 라는 객체를 자동으로 prop 값으로 받는다. [[Profile.js 16줄 >>]()]
+Route 의 component 는 **"match"** 라는 객체를 자동으로 prop 값으로 받는다. [[Profile.js L15 >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/Profile.js#L15)]
 
 ```javascript
 // match 객체는 해당 컴포넌트가 어떤 경로 규칙에 의해 보이는지 정보를 담고 있다.
@@ -132,6 +134,50 @@ location.search 는 url query 값을 가지고 있지만 문자열형태라서 �
 
 **예시**
 
-1. App.js 의 /profiles Route [App.js 33 줄>>]()
-2. Profiles.js 의 Route [Profiles.js >>](./src/Profiles.js)
+1. App.js 의 /profiles Route [App.js L38 >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/App.js#L38)
+2. Profiles.js 의 sub-Route [Profiles.js >>](./src/Profiles.js)
 3. Profile.js 에서 최종 rendering [Profile.js >>](./src/Profile.js)
+
+<br/>
+
+#### 6. react-rounte 부가 기능 [[profile.js >>](./src/profile.js)]
+
+**history [[사용 예제 (class 컴포넌트) >>](./src/HistorySample.js)]**  
+history 객체는 match, location 과 함께 Route 로 사용된 component 에게 전해지는 props 중 하나이다.
+
+```javascript
+// history 출력
+{
+  length: 33
+  action: "POP"
+  location: {pathname: "/history", search: "", hash: "", state: undefined, key: "ejgp6n"}
+  createHref: ƒ createHref(location)
+  push: ƒ push(path, state)
+  replace: ƒ replace(path, state)
+  go: ƒ go(n)
+  goBack: ƒ goBack()
+  goForward: ƒ goForward()
+  block: ƒ block(prompt)
+  listen: ƒ listen(listener)
+}
+```
+
+**withRouter**
+
+withRouter 함수는 HoC(Higher-order Component)이다. 어떤 컴포넌트가 Route 로 사용된 컴포넌트가 아니더라도 match, location, history 객체를 접근할 수 있게 해 준다.
+
+[[WithRouter 컴포넌트 >>](./src/WithRouterSample.js)]  
+[[호출 (Profile.js L38) >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/Profile.js#L38)]
+
+**Switch [[App.js L33 >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/App.js#L33)]**  
+Switch 컴포넌트는 여러 Route를 감싸서 그중 일치하는 단 하나의 라우트만을 렌더링시켜 준다.  
+Switch를 사용하면 모든 규칙과 일치하지 않을 때 보여 줄 Not Found 페이지도 구현할 수 있다.
+
+**NavLink [[Profiles.js 16줄 >>](https://github.com/seong7/React_study/blob/master/13/router-tutorial/src/Profiles.js#L16)]**  
+NavLink는 Link와 매우 비슷하다. NavLink 의 to (경로) 와 현재 브라우저의 URL 이 일치하는 경우 특정 스타일 혹은 CSS 클래스를 적용할 수 있는 컴포넌트이다.
+
+- **사용가능한 props**
+  - activeStyle : 스타일을 적용할 때 사용
+  - activeClassName : 클래스 적용할 때 사용
+  - exact
+  - isActive
