@@ -16,6 +16,7 @@ const App = () => {
       // useState 의 함수형 update 사용함
       produce((draft) => {
         draft[name] = value;
+        // form 객체의 name 의 value 를 지정함
       }) //__ update 함수를 return 함
     );
   }, []); // 현재 state 값에 의존성 사라짐
@@ -32,6 +33,7 @@ const App = () => {
 
       // array에 새 항목 등록
       setData(
+        // draft 에 data state 들어감
         produce((draft) => {
           draft.array.push(info);
         })

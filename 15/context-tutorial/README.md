@@ -107,6 +107,8 @@ RenderProps 패턴 (children 에 함수를 넣는 패턴) 을 사용할 필요 �
 
 ## static contextType 사용 (class 컴포너트 용)
 
+단점 : 한 클래스에 하나의 context 밖에 사용하지 못한다. (함수형 컴포넌트와 useContext 사용이 더 권장됨)
+
 **1. Color Context 선언 [[color_dynamic.js >>](./src/contexts/color_dynamic.js)]**  
  useContext 부분과 동일한 Context 사용 (동일한 전역 state 공유하게됨)
 
