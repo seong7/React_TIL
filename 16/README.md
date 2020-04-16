@@ -41,7 +41,11 @@ react-redux, angular-redux, ember-redux, redux (vanilla용) 등의 라이브러�
 
  <br/>
 
-## vanilla js 에서 redux 사용하기 [>>](./vanilla-redux)
+## vanilla js 에서 redux 사용하기
+
+**[예제 익히기 >>](./vanilla-redux)**
+
+ <br/>
 
 ## 개념 정리
 
