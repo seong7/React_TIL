@@ -70,14 +70,14 @@ export default RenderPropsSample;
 **1. Color Context 선언 [[color_dynamic.js >>](./src/contexts/color_dynamic.js)]**  
  Provider 를 미리 정의해서 export 시킴
 
-**2. Color Context 를 호출하는 App 선언 [[App_dynamic.js >>](./src/App_dynamic.js)]**  
+**2. Color Context 를 호출하는 App 선언 [[App_dynamic_hook.js >>](./src/App_dynamic_hook.js)]**  
  Color Context 에서 미리 정의한 ColorProvider 를 import 하여 사용한다.
 
 **3. 최하위 컴포넌트 (ColorBox) 를 선언 [[ColorBox_dynamic.js >>](./src/components/ColorBox_dynamic.js)]**  
  ColorConsumer 를 import 하여 사용
 
 **_중요 !!_**  
-**4. 또 다른 컴포넌트 (SelectColors.js) 를 이용해 Context 의 setState 이벤트들 사용 [[SelectColors.js >>](./src/components/SelectColors.js)]**  
+**4. 또 다른 컴포넌트 (SelectColors_dynamic.js) 를 이용해 Context 의 setState 이벤트들 사용 [[SelectColors_dynamic.js >>](./src/components/SelectColors_dynamic.js)]**  
  색표를 선택하면 div 의 색이 바뀌도록 설정함
 
 **중요 포인트**
@@ -88,5 +88,32 @@ export default RenderPropsSample;
 
 ## useContext 사용
 
-**Consumer 대신 useContext Hook 사용하기**
-RenderProps 패턴 (children 에 함수를 넣는 패턴) 을 사용할 필요 없어져 훨씬 간편해진다.
+**Consumer 대신 useContext Hook 사용해보자**  
+RenderProps 패턴 (children 에 함수를 넣는 패턴) 을 사용할 필요 없어져 **훨씬 간편해진다.**
+
+**1. Color Context 선언 [[color_dynamic.js >>](./src/contexts/color_dynamic.js)]**  
+ 동적사용 부분과 동일한 Context 사용 (동일한 전역 state 공유하게됨)
+
+**2. Color Context 를 호출하는 App 선언 [[App_dynamic_hook.js >>](https://github.com/seong7/React_study/blob/master/15/context-tutorial/src/App_dynamic_hook.js#L24)]**  
+ Color Context 에서 미리 정의한 ColorProvider 를 import 하여 사용한다.  
+ useContext 사용해도 여전히 Provider 로 감싸줘야함
+
+**3. 최하위 컴포넌트 (ColorBox / selectColors) 를 선언**  
+**[[ColorBox_hook.js (state 사용) >>](./src/components/ColorBox_hook.js)]**  
+**[[SelectColors_hook.js (setState 사용) >>](./src/components/SelectColors_hook.js)]**  
+ hook 사용 부분임 (코드 간단함)
+
+<br/>
+
+## static contextType 사용 (class 컴포너트 용)
+
+**1. Color Context 선언 [[color_dynamic.js >>](./src/contexts/color_dynamic.js)]**  
+ useContext 부분과 동일한 Context 사용 (동일한 전역 state 공유하게됨)
+
+**2. Color Context 를 호출하는 App 선언 [[App_dynamic_hook.js >>](https://github.com/seong7/React_study/blob/master/15/context-tutorial/src/App_dynamic_hook.js#L28)]**  
+ Color Context 에서 미리 정의한 ColorProvider 를 import 하여 사용한다.  
+ contextType 을 사용해도 여전히 Provider 로 감싸줘야함
+
+**3. 최하위 컴포넌트 (selectColors) 를 선언**  
+**[[SelectColors_contextType.js (setState 사용) >>](./src/components/SelectColors_contextType.js)]**  
+ contextType 사용 부분임 (코드 간단함)

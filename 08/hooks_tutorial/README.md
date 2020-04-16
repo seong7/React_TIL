@@ -107,7 +107,7 @@
 
             export default RefSample;
 
-### 7. useContext [>>]()
+### 7. useContext [[15 장 README 가장 아랫부분 보기 >>](https://github.com/seong7/React_study/tree/master/15/context-tutorial)]
 
 전역 state 관리 기능인 Context API 를 사용하는 방법 중 하나로, 복잡한 Render Props 패턴을 사용하지 않고 간편히 Context 를 사용할 수 있게 해준다.
 

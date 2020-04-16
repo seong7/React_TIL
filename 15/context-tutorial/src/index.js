@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import App from "./App";
-import App_dynamic from "./App_dynamic";
+import App_dynamic_hook from "./App_dynamic_hook";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <App_dynamic />
+    <App_dynamic_hook />
   </React.StrictMode>,
   document.getElementById("root")
 );
