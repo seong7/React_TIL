@@ -77,7 +77,7 @@ a 태그는 페이지를 전환하는 과정에서 페이지를 새로 불러오
 
 Link 컴포넌트를 사용하면 앱의 state를 유지한 상태로 HTML5 History API 를 사용해 페이지의 주소만 변경해 준다. 실제로는 페이지 전환을 방지하는 기능을 가진 a 태그이다.
 
-#### 4. URL Parameter 와 Query [[profile.js >>](./src/profile.js)]
+#### 4. URL Parameter 와 Query [[Profile.js >>](./src/Profile.js)]
 
 페이지 주소에 유동적인 값을 전달해야할 때 사용한다.
 
@@ -127,7 +127,7 @@ location.search 는 url query 값을 가지고 있지만 문자열형태라서 �
 
 <br/>
 
-#### 5. 서브 라우트 [[profile.js >>](./src/profile.js)]
+#### 5. 서브 라우트 [[Profile.js >>](./src/Profile.js)]
 
 라우트 내부에 또 라우트를 정의하는 것을 서브 라우트라고 한다.  
 그냥 라우트로 사용되고 있는 컴포넌트의 내부에 Route 컴포넌트를 또 사용하면 된다.
@@ -140,7 +140,7 @@ location.search 는 url query 값을 가지고 있지만 문자열형태라서 �
 
 <br/>
 
-#### 6. react-rounte 부가 기능 [[profile.js >>](./src/profile.js)]
+#### 6. react-rounte 부가 기능 [[profile.js >>](./src/Profile.js)]
 
 **history [[사용 예제 (class 컴포넌트) >>](./src/HistorySample.js)]**  
 history 객체는 match, location 과 함께 Route 로 사용된 component 에게 전해지는 props 중 하나이다.
