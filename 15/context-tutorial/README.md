@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 15 장 | Context API [>>](./15/context-tutorial)
 
-## Available Scripts
+사용자 로그인 정보, 애플리케이션 환경 설정, 테마 등 전역적으로 필요한 정보를 저장하기 위해 전역 상태를 관리한다.
 
-In the project directory, you can run:
+_기존 방식의 전역 상태는 App.js 의 state 로 각 컴포넌트에 props 으로 전달하여 조작 및 사용하였다._
 
-### `yarn start`
+하지만, 컴포넌트 구조가 깊어지면 아래 사진과 같이 너무 많은 컴포넌트를 거쳐야하는 문제가 발생한다.  
+이런 경우 **유지 보수성이 낮아질 수 있다.**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![complexCompo.JPG](./ref/complexCompo.JPG)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+하지만, **Context API / Redux / MobX** 를 사용하면 모든 컴포넌트에서 별도의 전역 state 에 바로 접근할 수 있다.
 
-### `yarn test`
+> **Context API** 는 React v16.3 이후부터 많이 개선되었고,
+> 개선된 이후부터는 Redux, MobX 등 별도의 라이브러리 없이도 전역 state 를 쉽게 관리할 수 있게 되었다.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `yarn build`
+## Context API 사용 [[color.js (context) >>](./contexts/color.js)]
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> 가장 중요한 흐름 :
+>
+> **Context 선언  
+> => Context.Provider 로 부모 컴포넌트를 감싸준다.  
+> => Context.Consumer 로 자식(최종) 컴포넌트를 감싸준다**
+>
+> **_감싸주기만 해도 context 의 state 를 전역적으로 공유하게 된다._**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### src 디렉터리에 contexts / components 디렉터리를 각각 생성
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+contexts 폴더에는 관리할 파일을 생성해 createContext 함수로 Context 를 생성한다. [[color.js](./src/contexts/color.js)]
 
-### `yarn eject`
+#### Component 에서 Context 사용하기 (<context.Consumer>)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**[ColorBox.js >>](./src/components/ColorBox.js)**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<context.Consumer> 로 감싼 컴포넌트의 자식 부분에서 Context 객체를 받아 함수 실행한다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> 함수를 child 로 넣어줌 :  
+> **Function as a child 패턴** 또는 **Render Props 패턴** 이라고 부름
+>
+> 자식 컴포넌트는 해당 함수를 props children 값으로 받아 함수를 실행하여 render 한다.
+>
+> 아래는 예시
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```javascript
+//--- RenderProps Component  (children 함수를 받아 실행한다.)
+import React from "react";
+const RenderPropsSample = ({ children }) => {
+  return <div>결과: {children(5)}</div>;
+};
+export default RenderPropsSample;
 
-## Learn More
+//--- 부모 Component 에서 사용할 때 (chiledren 에 함수 넣어준다.)
+<RenderPropsSample>{(value) => 2 * value}</RenderPropsSample>;
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 부모 component 에서 Context 값 지정해주기 (<context.Provider>)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**[App.js >>](./src/App.js)**
 
-### Code Splitting
+<context.Provider> 로 감싼 부모 컴포넌트에서 context 값을 새로 지정해주어 사용한다.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<context.Consumer> 로 감싸진 자식 컴포넌트는 그 새로운 context 값을 받아 사용한다.
 
-### Analyzing the Bundle Size
+<br/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Context 동적 사용
 
-### Making a Progressive Web App
+**1. Color Context 선언 [[color_dynamic.js >>](./src/contexts/color_dynamic.js)]**  
+ Provider 를 미리 정의해서 export 시킴
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+**2. Color Context 를 호출하는 App 선언 [[App_dynamic.js >>](./src/App_dynamic.js)]**  
+ Color Context 에서 미리 정의한 ColorProvider 를 import 하여 사용한다.
 
-### Advanced Configuration
+**3. 최하위 컴포넌트 (ColorBox) 를 선언 [[ColorBox_dynamic.js >>](./src/components/ColorBox_dynamic.js)]**  
+ ColorConsumer 를 import 하여 사용
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+**_중요 !!_**  
+**4. 또 다른 컴포넌트 (SelectColors.js) 를 이용해 Context 의 setState 이벤트들 사용 [[SelectColors.js >>](./src/components/SelectColors.js)]**  
+ 색표를 선택하면 div 의 색이 바뀌도록 설정함
 
-### Deployment
+**중요 포인트**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Consumer 컴포넌트의 children 은 꼭 함수가 와야한다. (컴포넌트는 return 시키기)
+- children 의 함수에 매개변수로 state 객체를 받아 children 내에서 setState 함수 사용하는법
+- 마우스 우클릭은 onContextMenu() 로 감지한다.
 
-### `yarn build` fails to minify
+## useContext 사용
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**Consumer 대신 useContext Hook 사용하기**
+RenderProps 패턴 (children 에 함수를 넣는 패턴) 을 사용할 필요 없어져 훨씬 간편해진다.

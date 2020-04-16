@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ColorBox from "./components/ColorBox";
+import ColorContext from "./contexts/color";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // value 값을 정해주는 Provider 사용 방법
+    // Provider 를 사용하면 꼭 value 를 정해주어야 한다. OR error 발생
+    <ColorContext.Provider value={{ color: "red" }}>
+      <div>
+        <ColorBox />
+      </div>
+    </ColorContext.Provider>
   );
 }
 
