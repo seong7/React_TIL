@@ -88,7 +88,7 @@ _이 프로젝트에서 사용_
      $ yarn add redux-devtools-extension
      ```
 
-     composeWithDevTools import 후 store 생성문에 사용 [[src/index.js 13줄 >>]()]
+     composeWithDevTools import 후 store 생성문에 사용 [[src/index.js L13 >>](https://github.com/seong7/React_study/blob/master/17/react-redux-tutorial/src/index.js#L13)]
 
      적용 후 chrom dev tool 에서 redux 메뉴 확인 (state 확인)
 
