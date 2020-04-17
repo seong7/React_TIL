@@ -1,0 +1,10 @@
+.todos_wrapper {
+  background: #333;
+  display: block;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  margin: 5px auto;
+  overflow-x: scroll;
+  box-sizing: border-box;
+}

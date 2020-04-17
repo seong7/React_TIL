@@ -19,3 +19,5 @@
 ### 15 장 | Context API [>>](./15/context-tutorial)
 
 ### 16 장 | Redux Basic [>>](./16/)
+
+### 17 장 | react-redux [>>](./17/react-redux-tutorial)

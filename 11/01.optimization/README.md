@@ -2,7 +2,7 @@
 
 ### 1. React.memo
 
-함수형 component 의 export 문에 React.memo 를 호출하여 component 의 props 값이 바뀌지 않았을 때는 update 되지 않도록 최적화할 수 있다.
+본래 부모 컴포넌트가 re-render 되면 자식 컴포넌트도 자동으로 re-render 된다. 하지만, 함수형 component 의 export 문에 React.memo 를 호출하면 부모 component 가 re-render 되더라도 해당 component 의 props 값이 바뀌지 않았을 때는 re-render 되지 않도록 최적화할 수 있다.
 
 **하지만, performance 체크해보면 크게 차이는 없다. (0.2 ~ 0.8 s 정도 단축됨)**
 
