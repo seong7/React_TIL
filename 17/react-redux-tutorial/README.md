@@ -104,4 +104,4 @@ _이 프로젝트에서 사용_
 
      4. 해당 container export 문에 redux\_ connect 함수 사용해 container 와 redux 연결시켜줌
 
-7. **App.js 에서 container return 시키기**
+7. **App.js 에서 container return 시키기** [[App.js >> ](./src/App.js)]
