@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 };
 
 // 2. mapDispatchToProps 함수 정의
-// (store 에 저장된 reducer 의 전체 state 를 변수에 담아 해당 컴포넌트의 props 로 전달한다.)
+// (redux 의 action 정의 함수를 변수에 담아 해당 컴포넌트의 props 로 전달)
 
 /* 2-1. 방법 1  _ 기본*/
 // const mapDispatchToProps = (dispatch) => ({
@@ -45,7 +45,7 @@ const mapDispatchToProps = {
 };
 
 // 3. component render
-// (store 에 저장된 reducer 의 전체 state 를 변수에 담아 해당 컴포넌트의 props 로 전달한다.)
+//  (redux 에서 받은 state 와 action 정의 함수를 props 로 사용)
 const CounterContainer = ({ number, increase, decrease }) => {
   return (
     <Counter number={number} onIncrease={increase} onDecrease={decrease} />
