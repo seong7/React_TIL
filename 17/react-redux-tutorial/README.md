@@ -29,7 +29,8 @@ redux 를 사용할 때는 **presentational** 컴포넌트와 **container** 컴�
 - actions (action type 정의)
 - contants (action 생성 함수)
 - reducers
-  위의 세 폴더를 생성하고 모든 기능의 redux 관련 코드 파일들을 해당되는 폴더에 분류하여 정리
+
+위의 세 폴더를 생성하고 모든 기능의 redux 관련 코드 파일들을 해당되는 폴더에 분류하여 정리
 
 _단점 : 하나의 action 을 만들면 세 종류의 파일을 모두 각각 수정해줘야하는 불편함 발생_
 
@@ -98,7 +99,7 @@ _이 프로젝트에서 사용_
 
      1. mapStateToProps 함수 정의 (redux 의 state 를 변수에 담아 해당 컴포넌트의 props 로 전달))
 
-     2. mapDispatchToProps 함수 정의 (redux 의 action 정의 함수를 변수에 담아 해당 컴포넌트의 props 로 전달)
+     2. mapDispatchToProps 함수 정의 (redux 의 action 객체 생성 함수를 변수에 담아 해당 컴포넌트의 props 로 전달)
 
      3. component render (props 로 위에서 정의한 변수들에 담긴 state 와 dispatch 함수 받아 사용)
 

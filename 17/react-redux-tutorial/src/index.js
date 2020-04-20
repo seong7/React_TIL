@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension'; // chrome devTool 확장자 쓰는 방법 (npm 으로 redux-devtools-extension 받아야함)
 
 // 2. store 생성
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools()); // store 에 reducer 를 담을 때, reducer 에 담긴 state 들도 함께 저장된다.
 
 // 3. react-redux 의 Provider 로 App 을 감싸준다.
 ReactDOM.render(

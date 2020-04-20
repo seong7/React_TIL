@@ -6,6 +6,8 @@ import { combineReducers } from 'redux';
 import counter from './counter';
 import todos from './todos';
 
+// 일반적으로 앱은 하나의 store 를 사용하고
+// store 에는 하나의 reducer 만 저장할 수 있으므로 rootReducer 로 합쳐준다.
 const rootReducer = combineReducers({
   counter,
   todos,

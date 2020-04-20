@@ -22,4 +22,4 @@
 
 ### 17 장 | react-redux [>>](./17/react-redux-tutorial)
 
-### 18 장 | # Redux Middleware [>>](./18/learn-redux-middleware)
+### 18 장 | Redux Middleware [>>](./18/learn-redux-middleware)
