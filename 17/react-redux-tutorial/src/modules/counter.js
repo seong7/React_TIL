@@ -26,7 +26,7 @@ function counter(state = initialState, action) {
         number: state.number - 1,
       };
     default:
-      return state;
+      return state; // 최초 render 시 앱에 state 를 생성해줌 !!! (없으면 에러발생)
   }
 }
 

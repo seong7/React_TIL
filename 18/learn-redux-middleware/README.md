@@ -26,9 +26,7 @@ action 이 dispatch 될 때마다 아래 값들을 출력하는 미들웨어를 
 store 에 logger 부착 : [[ src/index.js >> ](./src/index.js)]  
 **=> 이제 logger 는 reducer 의 실행전에 호출된다.**
 
-<br/>
-
-#### react-logger 라이브러리 (완성된 middleware) 사용하기
+#### 완성된 middleware 라이브러리 사용하기 (react-logger 라이브러리)
 
 ```
 $ yarn add react-logger
@@ -37,46 +35,13 @@ $ yarn add react-logger
 store 에 logger 부착하면 끝 ! [[src/index.js >> ](./src/index.js)]  
 **=> 간단히 사용가능 ( 미들웨어는 이렇게 완성된 것을 사용하는 경우가 많다.)**
 
-## redux-thunk
+## redux-thunk [>>](./redux_thunk.md)
 
 **비동기 작업을 처리할 때 가장 많이 사용하는 미들웨어 라이브러리**  
 객체가 아닌 함수 형태의 액션을 디스패치해 reducer 실행 전 작업을 시킬 수 있다.
 
-> 리덕스의 창시자인 댄 아브라모프(Dan Abramov)가 만들었으며, 리덕스 공식 매뉴얼에서도 이 미들웨어를 사용하여 비동기 작업을 다루는 예시를 보여 줌.
-
-**Thunk 란?**
-
-특정 작업을 나중에 할 수 있도록 미루기 위해 함수 형태로 감싼 것을 의미함
-
-#### redux-thunk 적용해보기
-
-**1. 라이브러리 설치 후 store 에 적용하기 [[src/index.js >>](./src/index.js)]**
-
-```
-$ yarn add redux-thunk
-```
-
-**2. redux Module 생성 (Thunk 함수 정의)**  
-**[[modules/counter_thunk.js >>](./src/modules/counter_thunk.js)]**
-
-- 기존 Action 생성 함수 외에 Thunk 함수를 만든다. (코드 주석의 2번 참조)
-- Thunk 함수는 reducer 실행 전에 작업할 기능을 담고 있는 또 다른 함수를 return 한다.
-
-**3. Container 생성**  
- **[[containers/CounterContainer_thunk.js >>](./src/containers/CounterContainer_thunk.js)]**
-
-일반 redux 의 Container 와 다른 점 :  
- Action 생성 함수가 아니라 **Thunk 생성 함수를 mapDispatchToProps() 에 사용**한다.
-
-**4. Component 생성 (일반 redux 와 동일)**
-**[[components/Counter.js >>](./src/components/Counter.js)]**
-
-Presentational-Component 는 정말 일반 redux 와 동일하게 작성한다.  
- 물론, Containers 에서 넘겨준 **Thunk 생성 함수를 Props 로 받는다.**
-
-**===>**  
-**중요한 점은 redux-thunk 미들웨어 코드가 적용된 곳은 오직 src/index.js 의 store 생성 부분 뿐이라는 점**  
-**<===**
+- 적용해보기 (redux-thunk 기초)
+- 비동기 작업 처리 (redux-thunk)
 
 <br/>
 

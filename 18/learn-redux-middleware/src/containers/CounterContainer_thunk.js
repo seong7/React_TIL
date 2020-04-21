@@ -18,7 +18,8 @@ const mapStateToProps = (state) => {
   // 해당 함수의 return 값은 props 으로 넘겨질 수 있다.
 
   // store 에 저장된 state 를 모두 받아온다.
-  console.log(state);
+  // console.log(state);
+
   /*  
     출력 (전체 state 가 모두 넘어옴): 
        {
