@@ -26,10 +26,10 @@ action 이 dispatch 될 때마다 아래 값들을 출력하는 미들웨어를 
 store 에 logger 부착 : [[ src/index.js >> ](./src/index.js)]  
 **=> 이제 logger 는 reducer 의 실행전에 호출된다.**
 
-#### 완성된 middleware 라이브러리 사용하기 (react-logger 라이브러리)
+#### 완성된 middleware 라이브러리 사용하기 (redux-logger 라이브러리)
 
 ```
-$ yarn add react-logger
+$ yarn add redux-logger
 ```
 
 store 에 logger 부착하면 끝 ! [[src/index.js >> ](./src/index.js)]  
